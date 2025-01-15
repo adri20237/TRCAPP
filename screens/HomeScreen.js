@@ -22,9 +22,7 @@ export default function HomeScreen({ navigation }) {
       password,
     };
 
-    // Add API call to send data to backend here (e.g., fetch or axios)
-
-    // On success, navigate to the About screen or show success message
+    
     navigation.navigate('About');
   };
 
@@ -95,13 +93,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingTop: 50, // Add padding to position content below the status bar
+    paddingTop: 50, 
     backgroundColor: '#fff',
   },
   logo: {
-    width: 150, // Adjust width as needed
-    height: 150, // Adjust height as needed
-    marginBottom: 20, // Space between the logo and input fields
+    width: 150,
+    height: 150, 
+    marginBottom: 20, 
   },
   input: {
     borderWidth: 1,
