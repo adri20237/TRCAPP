@@ -3,23 +3,19 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, Modal, Button, 
 import * as ImagePicker from 'expo-image-picker';
 import * as MailComposer from 'expo-mail-composer';
 import * as Location from 'expo-location';
-import MapView, { Marker } from 'react-native-maps';  // Import MapView and Marker
-
+import MapView, { Marker } from 'react-native-maps';  
 export default function AboutScreen({ navigation }) {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [location, setLocation] = useState(null);
   const [hasLocationPermission, setHasLocationPermission] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [isUpdateModalVisible, setIsUpdateModalVisible] = useState(false);  // For Request an Update modal
-
-  // Coordinates of the immigration office (replace with actual coordinates)
+  const [isUpdateModalVisible, setIsUpdateModalVisible] = useState(false);  
   const immigrationOffice = {
     latitude: 52.2297,  // Example coordinates for immigration office
     longitude: 21.0122, // Example coordinates for immigration office
   };
 
-  // Request permissions on component mount
   useEffect(() => {
     const getPermissions = async () => {
       if (Platform.OS !== 'web') {
@@ -92,7 +88,7 @@ export default function AboutScreen({ navigation }) {
   };
 
   const handleRequestUpdate = () => {
-    setIsUpdateModalVisible(true);  // Show the "Request an Update" modal
+    setIsUpdateModalVisible(true);  
   };
 
   const handleSendEmail = async () => {
@@ -103,7 +99,7 @@ export default function AboutScreen({ navigation }) {
         body: 'Dear Sir/Madam,\n\nI would like to request an update regarding my application.\n\nBest regards.',
       });
       if (result.status === 'sent') {
-        setIsUpdateModalVisible(false); // Close modal if email is sent successfully
+        setIsUpdateModalVisible(false);
       }
     } catch (error) {
       console.error('Error sending email:', error);
